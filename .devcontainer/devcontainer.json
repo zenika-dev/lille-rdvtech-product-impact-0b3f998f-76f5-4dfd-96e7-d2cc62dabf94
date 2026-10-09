@@ -24,7 +24,7 @@
 			]
 		}
 	},
-	"forwardPorts": [],
+	"forwardPorts": [5050, 9000],
 	"portsAttributes": {
 		"5050": {
 			"label": "pgAdmin",
