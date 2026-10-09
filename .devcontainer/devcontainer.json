@@ -24,18 +24,15 @@
 			]
 		}
 	},
-	"forwardPorts": [
-		"pgadmin:80",
-		"akhq:8080"
-	],
+	"forwardPorts": [],
 	"portsAttributes": {
-		"pgadmin:80": {
+		"5050": {
 			"label": "pgAdmin",
 			"onAutoForward": "notify"
 		},
-		"akhq:8080": {
+  		"9000": {
 			"label": "AKHQ",
 			"onAutoForward": "notify"
-		}
+  		}
 	}
 }
