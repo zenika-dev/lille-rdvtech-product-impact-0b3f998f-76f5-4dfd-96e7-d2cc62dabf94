@@ -1,0 +1,41 @@
+{
+	"name": "Debian",
+	"dockerComposeFile": ["../docker-compose.yml", "docker-compose.extend.yml"],
+	"service": "java",
+  	"workspaceFolder": "/workspace",
+  	"shutdownAction": "stopCompose",
+	"postStartCommand": "/bin/bash .devcontainer/replace_urls.sh",
+	"features": {
+		"ghcr.io/devcontainers-extra/features/maven-sdkman:2": {
+			"version": "3.9.10",
+			"jdkVersion": "25",
+			"jdkDistro": "tem"
+		}
+	},
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"java.server.launchMode": "Standard",
+				"redhat.telemetry.enabled": false,
+				"java.maven.downloadSources": true
+			},
+			"extensions": [
+				"vscjava.vscode-java-pack"
+			]
+		}
+	},
+	"forwardPorts": [
+		"pgadmin:80",
+		"akhq:8080"
+	],
+	"portsAttributes": {
+		"pgadmin:80": {
+			"label": "pgAdmin",
+			"onAutoForward": "notify"
+		},
+		"akhq:8080": {
+			"label": "AKHQ",
+			"onAutoForward": "notify"
+		}
+	}
+}
